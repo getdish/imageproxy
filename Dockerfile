@@ -20,7 +20,7 @@ COPY --from=build /usr/share/zoneinfo /usr/share/zoneinfo
 COPY --from=build /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
 COPY --from=build /app/imageproxy /app/imageproxy
 
-USER go
+USER root
 
 CMD ["-addr", "0.0.0.0:8080"]
 ENTRYPOINT ["/app/imageproxy"]
